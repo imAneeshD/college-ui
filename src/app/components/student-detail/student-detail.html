@@ -1,0 +1,54 @@
+<div class="details-card">
+    <div class="header-row">
+        <i class="fas fa-arrow-left back-icon" (click)="goBack()" aria-label="Go Back"></i>
+        <h2>Student Details</h2>
+    </div>
+
+    <table class="details-table">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{student.fullName}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{student.email}}</td>
+            </tr>
+            <tr>
+                <th>Mobile</th>
+                <td>{{student.mobile}}</td>
+            </tr>
+            <tr>
+                <th>DOB</th>
+                <td>{{student.dateOfBirth | date}}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{student.age}}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{student.address}}</td>
+            </tr>
+            <tr>
+                <th>Course</th>
+                <td>{{student.course}}</td>
+            </tr>
+            <tr>
+                <th>File</th>
+                <td>
+                    <a [href]="getFileUrl(student.filePath)" target="_blank">
+                        {{ student.fileName }}
+                    </a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="actions">
+        <button class="btn-primary" (click)="print()">
+            <i class="fas fa-print"></i> Print
+        </button>
+    </div>
+</div>

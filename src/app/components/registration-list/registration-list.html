@@ -1,0 +1,40 @@
+<div class="list-card">
+    <h2>Student Registrations</h2>
+
+    <ng-container *ngIf="students && students.length > 0; else noData">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of students">
+                    <td>{{ s.fullName }}</td>
+                    <td>{{ s.course }}</td>
+                    <td>{{ s.email }}</td>
+                    <td>{{ s.mobile }}</td>
+                    <td>
+                        <button class="btn-outline" (click)="view(s.id)">View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <button class="btn-secondary" (click)="prev()" [disabled]="page===1">Previous</button>
+            <span>Page {{page}} / {{totalPages}}</span>
+            <button class="btn-secondary" (click)="next()" [disabled]="page===totalPages">Next</button>
+        </div>
+    </ng-container>
+
+    <ng-template #noData>
+        <div class="no-data">
+            <p>No student registrations found.</p>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,107 @@
+@import '../../../styles/variables';
+
+.list-card {
+    background: $color-surface;
+    box-shadow: 0 6px 18px rgba($color-primary, 0.08);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 95%;
+
+    h2 {
+        color: $color-primary;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+
+    thead {
+        background: $color-primary;
+        color: #fff;
+
+        th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid $color-border;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: rgba($color-primary, 0.05);
+            }
+
+            td {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+                color: $color-text;
+            }
+        }
+    }
+}
+
+/* Buttons */
+.btn-outline {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid $color-primary;
+    border-radius: 6px;
+    color: $color-primary;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background: $color-primary;
+        color: #fff;
+    }
+}
+
+.btn-secondary {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    background: $color-accent;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: darken($color-accent, 5%);
+    }
+
+    &:disabled {
+        background: lighten($color-accent, 20%);
+        cursor: not-allowed;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: $color-text;
+}
+
+.no-data {
+    padding: 2rem;
+    text-align: center;
+    color: $color-text-light;
+    font-size: 1rem;
+    font-weight: 500;
+}

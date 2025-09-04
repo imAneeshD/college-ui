@@ -1,0 +1,68 @@
+$color-primary: #5682B1; 
+$color-accent: #739EC9; 
+$color-bg: #fffefd; 
+$color-surface: #ffffff; 
+$color-border: #e5e7eb; 
+$color-text: #000000; 
+$color-text-light: #739EC9; /
+
+.toast {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+
+    display: grid;
+    grid-template-columns: 6px 1fr;
+    align-items: center;
+
+    min-width: 280px;
+    max-width: 360px;
+
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transform: translateX(120%);
+    opacity: 0;
+    transition: transform 400ms ease, opacity 300ms ease;
+
+    .bar {
+        height: 100%;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background: $color-primary;
+    }
+
+    .content {
+        padding: 12px 16px;
+        color: $color-text;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
+    &.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    &.success {
+        .bar {
+            background: $color-primary;
+        }
+    }
+
+    &.info {
+        .bar {
+            background: $color-accent;
+        }
+    }
+
+    &.error {
+        .bar {
+            background: #d9534f;
+        }
+
+    }
+}

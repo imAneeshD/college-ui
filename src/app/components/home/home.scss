@@ -1,0 +1,63 @@
+@import '../../../styles/variables';
+
+.dashboard-container {
+    background-color: $color-bg;
+
+    .welcome-section {
+        h1 {
+            color: $color-primary;
+        }
+        p {
+            color: $color-text-light;
+        }
+    }
+
+    .card {
+        background: $color-surface;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-body {
+            h6 {
+                color: $color-text-light;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            h2 {
+                color: $color-primary;
+                font-weight: 600;
+            }
+
+            small {
+                color: $color-text-light;
+                font-size: 0.8rem;
+            }
+
+            .rounded-circle {
+                background-color: rgba($color-primary, 0.1);
+                color: $color-primary;
+            }
+        }
+    }
+
+    .btn {
+        background-color: $color-primary;
+        color: $color-surface;
+        padding: 0.5rem 1rem;
+        border: none;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: darken($color-primary, 10%);
+        }
+
+        i {
+            margin-right: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+
+<!-- Notification -->
+<app-notification [message]="notificationMessage" [show]="showNotification" [type]="notificationType">
+</app-notification>
+
+
+<div class="registration-wrapper">
+    <div class="card">
+        <h2 class="text-center">Student Registration</h2>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <!-- Full Name -->
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" formControlName="fullName" placeholder="Enter your full name" />
+                <div class="error" *ngIf="submitted && f.fullName.errors?.['required']">
+                    Full Name is required
+                </div>
+                <div class="error" *ngIf="submitted && f.fullName.errors?.['minlength']">
+                    Full Name must be at least 3 characters
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter your email" />
+                <div class="error" *ngIf="submitted && f.email.errors?.['required']">
+                    Email is required
+                </div>
+                <div class="error" *ngIf="submitted && f.email.errors?.['email']">
+                    Invalid email format
+                </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="form-group">
+                <label class="form-label">Mobile</label>
+                <input type="text" class="form-control" formControlName="mobile" placeholder="Enter mobile number" />
+                <div class="error" *ngIf="submitted && f.mobile.errors?.['required']">
+                    Mobile number is required
+                </div>
+                <div class="error" *ngIf="submitted && f.mobile.errors?.['pattern']">
+                    Must be a 10-digit number
+                </div>
+            </div>
+
+            <!-- DOB -->
+            <div class="form-group">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" formControlName="dateOfBirth" />
+                <div class="error" *ngIf="submitted && f.dateOfBirth.errors?.['required']">
+                    Date of Birth is required
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label class="form-label">Address</label>
+                <textarea rows="3" class="form-control" formControlName="address"
+                    placeholder="Enter your address"></textarea>
+                <div class="error" *ngIf="submitted && f.address.errors?.['required']">
+                    Address is required
+                </div>
+            </div>
+
+            <!-- Course -->
+            <div class="form-group">
+                <label class="form-label">Course</label>
+                <select class="form-select" formControlName="course">
+                    <option value="">--Select Course--</option>
+                    <option>BBA I YEAR</option>
+                    <option>BCOM I YEAR</option>
+                    <option>BCA I YEAR</option>
+                </select>
+                <div class="error" *ngIf="submitted && f.course.errors?.['required']">
+                    Course selection is required
+                </div>
+            </div>
+
+            <!-- File -->
+            <div class="form-group">
+                <label class="form-label">Upload 10th/12th Marks Card</label>
+                <input type="file" class="form-control" (change)="onFileChange($event)" />
+            </div>
+
+            <button type="submit" class="btn-primary">Register Now</button>
+        </form>
+    </div>
+</div>

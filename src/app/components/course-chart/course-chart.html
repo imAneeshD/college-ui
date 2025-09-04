@@ -1,0 +1,13 @@
+<div class="chart-card">
+    <h2>Course-wise Registrations</h2>
+
+    <ng-container *ngIf="chartOptions.data?.length; else noChartData">
+        <ag-charts style="width:100%; height:400px;" [options]="chartOptions"></ag-charts>
+    </ng-container>
+
+    <ng-template #noChartData>
+        <div class="no-data">
+            <p>No course registration data available.</p>
+        </div>
+    </ng-template>
+</div>

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/variables';
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: $color-bg;
+    color: $color-text;
+    margin: 0;
+}

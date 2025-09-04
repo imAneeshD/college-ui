@@ -1,0 +1,19 @@
+<div class="app-layout d-flex">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h3>College Admin</h3>
+        </div>
+        <nav class="sidebar-nav">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a routerLink="/register" routerLinkActive="active">Register Student</a>
+            <a routerLink="/list" routerLinkActive="active">Registrations</a>
+            <a routerLink="/chart" routerLinkActive="active">Course Chart</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content flex-grow-1">
+        <router-outlet></router-outlet>
+    </main>
+</div>
